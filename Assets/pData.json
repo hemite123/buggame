@@ -1,0 +1,27 @@
+{
+    "bugcoin": "1096275",
+    "sname": [
+        {
+            "skillName": "lclick",
+            "phase": 5
+        },
+        {
+            "skillName": "eclick",
+            "phase": 5
+        },
+        {
+            "skillName": "clap",
+            "phase": 5
+        },
+        {
+            "skillName": "caskill",
+            "phase": 5
+        }
+    ],
+    "lmanager": [
+        {
+            "levelname": "l1",
+            "star": 2
+        }
+    ]
+}

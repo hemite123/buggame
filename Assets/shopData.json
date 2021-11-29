@@ -1,0 +1,33 @@
+{
+    "shoplist":
+    [
+        {
+            "skillName": "lclick",
+            "money": 
+            [
+                100,200,300,400,500
+            ]
+        },
+        {
+            "skillName": "eclick",
+            "money": 
+            [
+                100,200,300,400,500
+            ]
+        },
+        {
+            "skillName": "clap",
+            "money": 
+            [
+                100,200,300,400,500
+            ]
+        },
+        {
+            "skillName": "caskill",
+            "money": 
+            [
+                100,200,300,400,500
+            ]
+        }
+    ]
+}

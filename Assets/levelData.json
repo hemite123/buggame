@@ -1,0 +1,14 @@
+{
+   "levelList":
+   [
+       {
+           "lname":"l1",
+           "scenename":"s1",
+           "starttime":600,
+           "timeStar":
+           [
+               120,300,420
+           ]
+       }
+   ]
+}
