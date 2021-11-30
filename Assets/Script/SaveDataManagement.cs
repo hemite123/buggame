@@ -13,6 +13,7 @@ public class SaveDataManagement : MonoBehaviour
     public PlayerModel mdata;
     public ShopMode smodel;
     public SkillPhase sphase;
+    [SerializeField]
     public LevelModel lmodel;
     public static SaveDataManagement instance;
     DataPersinstance dpres;
@@ -30,11 +31,22 @@ public class SaveDataManagement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pathplayer = Application.dataPath + "/" + file;
+        pathplayer = Application.persistentDataPath + "/" + file;
         dpres = GetComponent<DataPersinstance>();
-        smodel = dpres.LoadShop(shopfile);
-        sphase = dpres.LoadSkillPhase("skillPhase.json");
-        lmodel = dpres.LoadLevelData(levelfile);
+        if(Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            Debug.Log("x");
+            dpres.LoadShop(shopfile);
+            dpres.LoadSkillPhase("skillPhase.json");
+            dpres.LoadLevelData(levelfile);
+        }
+        else
+        {
+            smodel = dpres.LoadShop(shopfile);
+            sphase = dpres.LoadSkillPhase("skillPhase.json");
+            lmodel = dpres.LoadLevelData(levelfile);
+        }
+       
         main = MainMenu.instance;
         DontDestroyOnLoad(this);
     }

@@ -273,21 +273,50 @@ public class Gamemanager : MonoBehaviour
                 if(pm.skillName == "lclick")
                 {
                     var cdcheck = sdm.sphase.skillphase.Single(x => x.skillName == pm.skillName);
-                    longLeftClickCD = cdcheck.coolDown[pm.phase -1];
+                    if(pm.phase == 0)
+                    {
+                        longLeftClickCD = cdcheck.coolDown[pm.phase];
+                    }
+                    else
+                    {
+                        longLeftClickCD = cdcheck.coolDown[pm.phase - 1];
+                    }
+                   
                 }else if(pm.skillName == "eclick")
                 {
                     var cdcheck = sdm.sphase.skillphase.Single(x => x.skillName == pm.skillName);
                     var skillcheck = skillManagement.Single(x => x.skillname == cdcheck.skillName);
-                    skillcheck.skillCooldown = cdcheck.coolDown[pm.phase - 1];
+                    if (pm.phase == 0)
+                    {
+                        skillcheck.skillCooldown = cdcheck.coolDown[pm.phase];
+                    }
+                    else
+                    {
+                        skillcheck.skillCooldown = cdcheck.coolDown[pm.phase - 1];
+                    }
                 }else if(pm.skillName == "caskill")
                 {
                     var cdcheck = sdm.sphase.skillphase.Single(x => x.skillName == pm.skillName);
-                    longTimeActive = cdcheck.coolDown[pm.phase - 1];
+                    if (pm.phase == 0)
+                    {
+                        longTimeActive = cdcheck.coolDown[pm.phase];
+                    }
+                    else
+                    {
+                        longTimeActive = cdcheck.coolDown[pm.phase - 1];
+                    }
                 }
                 else if (pm.skillName == "clap")
                 {
                     var cdcheck = sdm.sphase.skillphase.Single(x => x.skillName == pm.skillName);
-                    longTimeSpawn = cdcheck.coolDown[pm.phase - 1];
+                    if (pm.phase == 0)
+                    {
+                        longTimeSpawn = cdcheck.coolDown[pm.phase];
+                    }
+                    else
+                    {
+                        longTimeSpawn = cdcheck.coolDown[pm.phase - 1];
+                    }
                 }
             }
         }
