@@ -572,7 +572,7 @@ public class Gamemanager : MonoBehaviour
         blackTransition.SetActive(true);
         pmove.isStun = false;
         pmove.transform.position = firstposition;
-        uiGroup.SetActive(true);
+        uiGroup.SetActive(false);
         loseUi.SetActive(false);
         isBonk = true;
         timelimit = levelModel.starttime;
