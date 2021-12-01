@@ -25,6 +25,7 @@ public class MainMenu : MonoBehaviour
     public Slider musicSlide;
     public AudioSource source;
     public Text emessage;
+    public GameObject tutorialUi;
 
 
 
@@ -124,6 +125,10 @@ public class MainMenu : MonoBehaviour
 
     }
 
+    public void tutorialUiManagement(bool cond)
+    {
+        tutorialUi.SetActive(cond);
+    }
 
     public void StartGame(GameObject btn)
     {
