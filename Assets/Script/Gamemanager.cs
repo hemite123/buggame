@@ -340,6 +340,7 @@ public class Gamemanager : MonoBehaviour
             pauseUi.SetActive(true);
             pmove.isStun = true;
             volume = volumeSlider.value;
+            PlayerPrefs.SetFloat("audio", volume);
             source.volume = volume;
         }
         else if(!isPause && !isLose)
