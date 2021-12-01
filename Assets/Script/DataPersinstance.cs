@@ -32,49 +32,22 @@ public class DataPersinstance : MonoBehaviour
     public ShopMode LoadShop(string jsonload)
     {
         string json;
-        if (Application.platform == RuntimePlatform.WebGLPlayer)
-        {
-            StartCoroutine(loadJson("https://localhost/gameJam/shopData.json", "shop"));
-            return null;  
-        }
-        else
-        {
-             json = File.ReadAllText(Application.dataPath + "/" + jsonload);
-        }
-        ShopMode pmodel = JsonUtility.FromJson<ShopMode>(json);
-        return pmodel;
+        StartCoroutine(loadJson("https://hemite123.github.io/buggame/shopData.json", "shop"));
+        return null;
     }
 
     public SkillPhase LoadSkillPhase(string jsonload)
     {
         string json;
-        if (Application.platform == RuntimePlatform.WebGLPlayer)
-        {
-            StartCoroutine(loadJson("https://localhost/gameJam/skillPhase.json", "skill"));
-            return null;
-        }
-        else
-        {
-            json = File.ReadAllText(Application.dataPath + "/" + jsonload);
-        }
-        SkillPhase pmodel = JsonUtility.FromJson<SkillPhase>(json);
-        return pmodel;
+        StartCoroutine(loadJson("https://hemite123.github.io/buggame/skillPhase.json", "skill"));
+        return null;
     }
 
     public LevelModel LoadLevelData(string jsonload)
     {
         string json;
-        if (Application.platform == RuntimePlatform.WebGLPlayer)
-        {
-            StartCoroutine(loadJson("https://github.com/hemite123/buggame/tree/main/Assets/levelData.json", "level"));
-            return null;
-        }
-        else
-        {
-            json = File.ReadAllText(Application.dataPath + "/" + jsonload);
-        }
-        LevelModel pmodel = JsonUtility.FromJson<LevelModel>(json);
-        return pmodel;
+        StartCoroutine(loadJson("https://hemite123.github.io/buggame/levelData.json", "level"));
+        return null;
     }
 
     IEnumerator loadJson(string url,string mdl)

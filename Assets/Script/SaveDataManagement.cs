@@ -33,20 +33,9 @@ public class SaveDataManagement : MonoBehaviour
     {
         pathplayer = Application.persistentDataPath + "/" + file;
         dpres = GetComponent<DataPersinstance>();
-        if(Application.platform == RuntimePlatform.WebGLPlayer)
-        {
-            Debug.Log("x");
-            dpres.LoadShop(shopfile);
-            dpres.LoadSkillPhase("skillPhase.json");
-            dpres.LoadLevelData(levelfile);
-        }
-        else
-        {
-            smodel = dpres.LoadShop(shopfile);
-            sphase = dpres.LoadSkillPhase("skillPhase.json");
-            lmodel = dpres.LoadLevelData(levelfile);
-        }
-       
+        dpres.LoadShop(shopfile);
+        dpres.LoadSkillPhase("skillPhase.json");
+        dpres.LoadLevelData(levelfile);
         main = MainMenu.instance;
         DontDestroyOnLoad(this);
     }
